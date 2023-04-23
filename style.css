@@ -1,4 +1,4 @@
-body {
+.container {
   background-color: #f8f8f8;
   color: #333;
   font-family: Lato, sans-serif;
@@ -11,11 +11,11 @@ body {
   text-align: right;
 }
 
-.heading img {
+.main-picture {
   width: 100%;
 }
 
-.heading .more-info {
+.more-info {
   font-family: fantasy, cursive;
 }
 
@@ -30,31 +30,32 @@ body {
 .tasks-container {
   display: block;
   width: 500px;
-  margin: 0 auto 0;
+  margin: 0 auto;
 }
 
-.task {
+.input-field,
+.label {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
 }
 
-ul {
+.added-tasks,
+.incompleted-tasks,
+.completed-tasks {
   margin: 0;
-  padding: 0px;
-}
-
-li,
-h3 {
+  padding: 0;
   list-style: none;
 }
 
-input,
-button {
+.input-field,
+.checkbox {
   outline: none;
 }
 
-button {
+.edit-btn,
+.del-btn,
+.add-btn {
   background: none;
   border: 0px;
   color: #888;
@@ -64,11 +65,13 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.edit-btn:hover,
+.del-btn:hover,
+.add-btn:hover {
   color: #3a3A3a;
 }
 
-h3 {
+.title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -78,7 +81,7 @@ h3 {
   text-transform: uppercase;
 }
 
-input[type="text"] {
+.input-field {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -89,9 +92,10 @@ input[type="text"] {
   border-radius: 6px;
   font-family: Lato, sans-serif;
   color: #888;
+  display: none;
 }
 
-input[type="text"]:focus {
+.input-field:focus {
   color: #333;
 }
 
@@ -121,7 +125,7 @@ li > input[type="checkbox"] {
   margin: 0 10px;
 }
 
-li > label {
+.label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
@@ -132,13 +136,13 @@ li >    input[type="text"] {
   width: 226px;
 }
 
-button.delete img {
+.remove-icon {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-button.delete img:hover {
+.remove-icon:hover {
   transform: rotateZ(0);
 }
 
@@ -147,16 +151,12 @@ button.delete img:hover {
   color: #888;
 }
 
-/* Edit Task */
-ul li input[type=text] {
-  display: none;
-}
-
-ul li.edit-mode input[type=text] {
+.edit-mode .input-field,
+.add-mode .input-field {
   display: inline-block;
   width: 224px;
 }
 
-ul li.edit-mode label {
+.edit-mode .label {
   display: none;
 }
